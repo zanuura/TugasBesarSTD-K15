@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1765794670 source:c:\users\muhammad haiqal\kuliah\semester3\struktur-data\tugasbesark15\main.cpp
+1765800150 source:c:\users\muhammad haiqal\kuliah\semester3\struktur-data\tugasbesark15\main.cpp
 	<iostream>
 	"MLL.h"
 
-1765794675 c:\users\muhammad haiqal\kuliah\semester3\struktur-data\tugasbesark15\mll.h
+1765800696 c:\users\muhammad haiqal\kuliah\semester3\struktur-data\tugasbesark15\mll.h
 	<iostream>
 
-1765794673 source:c:\users\muhammad haiqal\kuliah\semester3\struktur-data\tugasbesark15\mll.cpp
+1765800664 source:c:\users\muhammad haiqal\kuliah\semester3\struktur-data\tugasbesark15\mll.cpp
 	<iostream>
 	"MLL.h"
 

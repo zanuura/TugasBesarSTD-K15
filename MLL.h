@@ -66,6 +66,7 @@ int showMainMenu();
 
 // handler function
 void handleInsertParent(list_orangTua &L);
+void handleInsertChild(list_anak &L);
 
 // --- FUNGSI/PROSEDUR UTAMA (PROTOTYPE) ---
 // 1. Insert data parent dari depan

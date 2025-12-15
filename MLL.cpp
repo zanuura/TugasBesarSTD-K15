@@ -109,7 +109,7 @@ void handleInsertParent(list_orangTua &L)
     cin.ignore();
     getline(cin, infoBaru.nama);
 
-    cout << "Jenis (ayah/ibu): ";
+    cout << "Jenis (Ayah/Ibu): ";
     cin.ignore();
     getline(cin, infoBaru.jenis);
 
@@ -127,6 +127,35 @@ void handleInsertParent(list_orangTua &L)
 
     cout << "\n[SUCCESS] Orang Tua " << infoBaru.nama << " berhasil ditambahkan." << endl;
 }
+
+void handleInsertChild(list_anak &L)
+{
+    infotype_anak infoBaru;
+    cout << "\n--- TAMBAH ANAK BARU ---\n";
+    // ... (Semua kode cin, getline, validasi usia yang panjang) ...
+    cout << "Nama: ";
+    cin.ignore();
+    getline(cin, infoBaru.nama);
+
+    cout << "Jenis kelamin: ";
+    cin.ignore();
+    getline(cin, infoBaru.jenis_kelamin);
+
+    cout << "usia: ";
+    while (!(cin >> infoBaru.usia))
+    {
+        cout << "Input usia tidak valid. Masukkan angka: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+    }
+
+    // --- 2. PROSES STRUKTUR DATA (Panggilan ke fungsi MLL inti) ---
+    adr_anak C_Baru = createNewChild(infoBaru);
+    insertLastChild(L, C_Baru);
+
+    cout << "\n[SUCCESS] Anak " << infoBaru.nama << " berhasil ditambahkan." << endl;
+}
+
 void insertFirstParent(list_orangTua &L, adr_orangTua P)
 {
     // Kasus 1: List kosong
@@ -152,4 +181,32 @@ adr_orangTua createNewParent(infotype_orangTua info)
     P->anak.first = NULL;
 
     return P;
+}
+
+void insertLastChild(list_anak &L, adr_anak C)
+{
+    // Kasus 1: List kosong
+    if (L.first == NULL)
+    {
+        L.first = C;
+    }
+    // Kasus 2: List tidak kosong
+    else
+    {
+        adr_anak last = L.first;
+        while(last->next != NULL) {
+            last = last->next;
+        }
+        last->next = C;
+    }
+}
+
+adr_anak createNewChild(infotype_anak info)
+{
+    adr_anak C = new elm_anak;
+
+    C->info = info;
+    C->next = NULL;          // Next node di List L2
+
+    return C;
 }

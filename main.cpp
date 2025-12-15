@@ -30,6 +30,7 @@ int main()
             break;
         case 4:
             // Panggil insertLastChild
+            handleInsertChild(L_ANAK);
             break;
         case 5:
             // Panggil findChild
