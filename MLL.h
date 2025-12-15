@@ -50,5 +50,7 @@ struct elm_relation {
     adr_relation next;
 };
 
+// procedure inisiasi data keluarga
+void InisiasiDataKeluarga(list_orangTua &L1, list_anak &L2);
 
 #endif // MLL_H_INCLUDED
